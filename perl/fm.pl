@@ -68,14 +68,14 @@ for (my $i = 0; $i < 10 ; $i++) {
 }
 
 sub smtpsend () {
-   my $smtp = Net::SMTP->new ('smtp.proofpoint.com',
-                               Hello => 'gta.us.proofpoint.com');
-   $smtp->mail("kzhang\@proofpoint.com");
+   my $smtp = Net::SMTP->new ('gmail-smtp-in.l.google.com',
+                               Hello => 'comcast.com');
+   $smtp->mail("defencer\@gmail.com");
    $smtp->to($rcpt);
    $smtp->data();
-   $smtp->datasend("From : kzhang\@proofpoint.com\n");
+   $smtp->datasend("From : defencer\@gmail.com\n");
    $smtp->datasend("To: $rcpt\n");
-   $smtp->datasend("Subject: FM search\r\n");
+   $smtp->datasend("Subject: CL search $query\r\n");
    $smtp->datasend("\r\n$data\r\n");
    my $ok = $smtp->dataend();
    print "smtp status : $ok\n";
